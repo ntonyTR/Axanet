@@ -1,0 +1,13 @@
+name: Modificación de Código
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  modificacion_codigo_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje de modificación de código
+        run: echo "Se ha realizado una modificación en el código de la aplicación."
