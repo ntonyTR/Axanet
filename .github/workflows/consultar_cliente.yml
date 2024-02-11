@@ -1,0 +1,13 @@
+name: Consultar Cliente
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  consultar_cliente_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje de consulta de cliente
+        run: echo "Cliente consultado."

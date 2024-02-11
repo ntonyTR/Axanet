@@ -1,0 +1,13 @@
+name: Actualizar Cliente Recurrente
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  actualizar_cliente_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje de actualización de cliente recurrente
+        run: echo "Cliente recurrente actualizado."
