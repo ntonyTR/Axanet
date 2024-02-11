@@ -1,0 +1,20 @@
+name: Solicitud de Mejora
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+  pull_request:
+    types: [labeled]
+    branches:
+      - main
+    tags:
+      - mejora
+
+jobs:
+  solicitud_mejora_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje de solicitud de mejora
+        run: echo "Se ha abierto una solicitud de mejora en la aplicación."
