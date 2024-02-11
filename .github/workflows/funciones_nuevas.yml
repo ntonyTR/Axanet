@@ -1,0 +1,20 @@
+name: Solicitud de Nuevas Funciones
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+  pull_request:
+    types: [labeled]
+    branches:
+      - main
+    tags:
+      - nueva-funcionalidad
+
+jobs:
+  solicitud_nuevas_funciones_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje de solicitud de nuevas funciones
+        run: echo "Se ha abierto una solicitud de nuevas funciones en la aplicación."
