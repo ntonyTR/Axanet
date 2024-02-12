@@ -17,20 +17,43 @@ def cargar_clientes():
                 clientes_info[nombre_cliente] = f.read()
 
 #crear nuevo cliente
+<<<<<<< HEAD
 
+=======
+def crear_cliente_nuevo():
+    nombre_cliente = input("Ingrese el nombre del nuevo cliente: ")
+    descripcion_servicio = input("Ingrese la descripción del servicio: ")
+
+    #crear nuevo archivo
+    with open(f"{nombre_cliente}.txt", "w") as archivo:
+        archivo.write(f"Nombre: {nombre_cliente}\n")
+        archivo.write(f"Descripción del servicio: {descripcion_servicio}\n")
+
+    #actualizar estructuras de datos
+    clientes_archivos[nombre_cliente] = f"{nombre_cliente}.txt"
+    clientes_info[nombre_cliente] = f"Nombre: {nombre_cliente}\nDescripción del servicio: {descripcion_servicio}\n"
+
+    print("Cliente creado correctamente.")
+
+#buscar y actualizar un cliente existente
+def buscar_actualizar_cliente_recurrente():
+    nombre_cliente = input("Ingrese el nombre del cliente recurrente: ")
+
+    #checar si el cliente existe
+    if nombre_cliente in clientes_archivos:
+        print("Cliente encontrado:")
+        print(clientes_info[nombre_cliente])
+>>>>>>> parent of 72825e9 (se agregó telefono para los usuarios)
 
         nueva_descripcion = input("Ingrese la nueva descripción del servicio: ")
-        nuevo_telefono = input("Ingrese el nuevo número de teléfono del cliente: ")
-
         #actualizar descripción del servicio
         with open(clientes_archivos[nombre_cliente], "a") as archivo:
             archivo.write(f"Nueva descripción del servicio: {nueva_descripcion}\n")
-            archivo.write(f"Nuevo número de teléfono: {nuevo_telefono}\n")
 
         #actualizar información del diccionario
-        clientes_info[nombre_cliente] += f"\nNueva descripción del servicio: {nueva_descripcion}\nNuevo número de teléfono: {nuevo_telefono}\n"
+        clientes_info[nombre_cliente] += f"\nNueva descripción del servicio: {nueva_descripcion}"
 
-        print("Descripción del servicio y número de teléfono actualizados correctamente.")
+        print("Descripción del servicio actualizada correctamente.")
     else:
         print("Cliente no encontrado.")
 
