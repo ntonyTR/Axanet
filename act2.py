@@ -17,31 +17,7 @@ def cargar_clientes():
                 clientes_info[nombre_cliente] = f.read()
 
 #crear nuevo cliente
-def crear_cliente_nuevo():
-    nombre_cliente = input("Ingrese el nombre del nuevo cliente: ")
-    descripcion_servicio = input("Ingrese la descripción del servicio: ")
-    telefono_cliente = input("Ingrese el número de teléfono del cliente: ")
 
-    #crear nuevo archivo
-    with open(f"{nombre_cliente}.txt", "w") as archivo:
-        archivo.write(f"Nombre: {nombre_cliente}\n")
-        archivo.write(f"Descripción del servicio: {descripcion_servicio}\n")
-        archivo.write(f"Número de teléfono: {telefono_cliente}\n")
-
-    #actualizar estructuras de datos
-    clientes_archivos[nombre_cliente] = f"{nombre_cliente}.txt"
-    clientes_info[nombre_cliente] = f"Nombre: {nombre_cliente}\nDescripción del servicio: {descripcion_servicio}\nNúmero de teléfono: {telefono_cliente}\n"
-
-    print("Cliente creado correctamente.")
-
-#buscar y actualizar un cliente existente
-def buscar_actualizar_cliente_recurrente():
-    nombre_cliente = input("Ingrese el nombre del cliente recurrente: ")
-
-    #checar si el cliente existe
-    if nombre_cliente in clientes_archivos:
-        print("Cliente encontrado:")
-        print(clientes_info[nombre_cliente])
 
         nueva_descripcion = input("Ingrese la nueva descripción del servicio: ")
         nuevo_telefono = input("Ingrese el nuevo número de teléfono del cliente: ")
