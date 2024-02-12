@@ -20,15 +20,17 @@ def cargar_clientes():
 def crear_cliente_nuevo():
     nombre_cliente = input("Ingrese el nombre del nuevo cliente: ")
     descripcion_servicio = input("Ingrese la descripción del servicio: ")
+    telefono_cliente = input("Ingrese el número de teléfono del cliente: ")
 
     #crear nuevo archivo
     with open(f"{nombre_cliente}.txt", "w") as archivo:
         archivo.write(f"Nombre: {nombre_cliente}\n")
         archivo.write(f"Descripción del servicio: {descripcion_servicio}\n")
+        archivo.write(f"Número de teléfono: {telefono_cliente}\n")
 
     #actualizar estructuras de datos
     clientes_archivos[nombre_cliente] = f"{nombre_cliente}.txt"
-    clientes_info[nombre_cliente] = f"Nombre: {nombre_cliente}\nDescripción del servicio: {descripcion_servicio}\n"
+    clientes_info[nombre_cliente] = f"Nombre: {nombre_cliente}\nDescripción del servicio: {descripcion_servicio}\nNúmero de teléfono: {telefono_cliente}\n"
 
     print("Cliente creado correctamente.")
 
@@ -42,14 +44,17 @@ def buscar_actualizar_cliente_recurrente():
         print(clientes_info[nombre_cliente])
 
         nueva_descripcion = input("Ingrese la nueva descripción del servicio: ")
+        nuevo_telefono = input("Ingrese el nuevo número de teléfono del cliente: ")
+
         #actualizar descripción del servicio
         with open(clientes_archivos[nombre_cliente], "a") as archivo:
             archivo.write(f"Nueva descripción del servicio: {nueva_descripcion}\n")
+            archivo.write(f"Nuevo número de teléfono: {nuevo_telefono}\n")
 
         #actualizar información del diccionario
-        clientes_info[nombre_cliente] += f"\nNueva descripción del servicio: {nueva_descripcion}"
+        clientes_info[nombre_cliente] += f"\nNueva descripción del servicio: {nueva_descripcion}\nNuevo número de teléfono: {nuevo_telefono}\n"
 
-        print("Descripción del servicio actualizada correctamente.")
+        print("Descripción del servicio y número de teléfono actualizados correctamente.")
     else:
         print("Cliente no encontrado.")
 
