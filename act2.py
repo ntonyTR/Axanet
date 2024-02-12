@@ -17,9 +17,6 @@ def cargar_clientes():
                 clientes_info[nombre_cliente] = f.read()
 
 #crear nuevo cliente
-<<<<<<< HEAD
-
-=======
 def crear_cliente_nuevo():
     nombre_cliente = input("Ingrese el nombre del nuevo cliente: ")
     descripcion_servicio = input("Ingrese la descripción del servicio: ")
@@ -43,7 +40,6 @@ def buscar_actualizar_cliente_recurrente():
     if nombre_cliente in clientes_archivos:
         print("Cliente encontrado:")
         print(clientes_info[nombre_cliente])
->>>>>>> parent of 72825e9 (se agregó telefono para los usuarios)
 
         nueva_descripcion = input("Ingrese la nueva descripción del servicio: ")
         #actualizar descripción del servicio
